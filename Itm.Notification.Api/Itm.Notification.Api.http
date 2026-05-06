@@ -1,0 +1,6 @@
+@Itm.Notification.Api_HostAddress = http://localhost:5277
+
+GET {{Itm.Notification.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
