@@ -1,10 +1,10 @@
-name: Deploy Gateway API to Docker Hub
+name: Deploy Inventory API to Docker Hub
 
 on:
   push:
     branches: [ "main" ]
     paths:
-      - 'Itm.Gateway.Api/**'
+      - 'Itm.Inventory.Api/**'
   workflow_dispatch:
 
 jobs:
@@ -25,9 +25,9 @@ jobs:
       uses: docker/build-push-action@v5
       with:
         context: .
-        file: ./Itm.Gateway.Api/Dockerfile
+        file: ./Itm.Inventory.Api/Dockerfile
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/itm-gateway-api:latest
+        tags: ${{ secrets.DOCKER_USERNAME }}/itm-inventory-api:latest
 
     - name: Verify Deployment
-      run: echo "🚀 Imagen del API Gateway desplegada exitosamente en Docker Hub!"
+      run: echo "🚀 Imagen de Inventory API desplegada exitosamente en Docker Hub!"
